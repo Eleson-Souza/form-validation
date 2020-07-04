@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="/css/indexStyle.css">
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+
+    <form method="POST" action="/form">
+        <fieldset>
+            <legend>Faça seu cadastro</legend>
+        
+        <% if(emailError) { %>
+            <div class="error"><%= emailError %></div>
+        <% } %>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= email %>">
+        </div>
+        
+        <% if(nameError) { %>
+            <div class="error"><%= nameError %></div>
+        <% } %>
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" value="<%= name %>">
+        </div>
+        
+        <% if(pointsError) { %>
+            <div class="error"><%= pointsError %></div>
+        <% } %>
+        <div>
+            <label for="pontos">Pontos</label>
+            <input type="number" name="pontos" id="pontos" value="<%= points %>">
+        </div>
+
+        <button type="submit">Enviar</button>
+    </fieldset>
+    </form>
+</body>
+</html>
